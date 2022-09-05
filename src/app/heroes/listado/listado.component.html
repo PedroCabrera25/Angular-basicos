@@ -1,0 +1,24 @@
+<p>Listado de Héroes</p>
+
+<!-- *nfIf refiere a la visibilidad de los datos -->
+<div *ngIf="heroeBorrado; else noBorrado">
+  <h3>Héroe Borrado: <small>{{heroeBorrado}} </small></h3>
+</div>
+<!-- el # marca una referencia local, al igual se ven en formularios.  -->
+<ng-template #noBorrado>
+  <h3>No ha borrado nada.</h3>
+</ng-template>
+
+
+
+
+<button (click)="borrarHeroe()">
+  Borrar
+</button>
+
+<!-- el *ngFor es parecido a un ciclo For -->
+<ul>
+  <li *ngFor=" let heroe of heroes; let i = index ">
+    {{i + 1}} - {{heroe}}
+  </li>
+</ul>
